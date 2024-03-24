@@ -1,0 +1,28 @@
+<div class="container">
+<div class="row d-flex d-flex justify-content-between">
+<div class="col-md-4 mb-4">
+<h2><%= @list.name %></h2>
+
+<!-- regarde comment afficher les infos du bookmark et des films ici -->
+<!-- nom du list, -->
+<div class="cards">
+  <% @list.bookmarks.each do |bookmark| %>
+    <div class="card">
+  <%= image_tag bookmark.movie.poster_url, alt:"movie image", width:100, height:800, class: "card-img-top" %>
+    <div class=card-body>
+        <%= bookmark.comment %>
+        <%= bookmark.movie.title %>
+        <%= bookmark.movie.overview %>
+        <%= bookmark.movie.rating %>
+        <%= link_to "Add a bookmark", new_list_path(@lists), class: "btn" %>
+        <%= link_to "Edit your comment", edit_bookmark_path(bookmark), class: "btn btn-primary" %>
+        <!-- ici on va ajouter le lien du destroy sur notre bookmark qu'on parcours actuellement -->
+        <%= link_to "Delete your comment", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-warning"%>
+    </div>
+    <%end%>
+    </div>
+    </div>
+    </div>
+</div >
+</div>
+</div>
