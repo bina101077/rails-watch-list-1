@@ -16,25 +16,29 @@
 <div class="cards">
   <% @list.bookmarks.each do |bookmark| %>
     <div class="card">
-    <div class="box-poster">
-      <%= image_tag bookmark.movie.poster_url, alt:"movie image", width:100, height:800, class: "card-img-top" %>
-    </div>
+      <div class="box-poster">
+      <% if bookmark.movie.poster_url.present? %>
+        <%= image_tag bookmark.movie.poster_url, alt:"movie image", width:100, height:800, class: "card-img-top" %>
+          <% else %>
+          <p class="card-text">No picture available</p>
+        <% end %>
+      </div>
       <div class=card-body>
-      <h5 class="card-title"><%= bookmark.movie.title %></h5>
-      <p class="card-text">Overview: <%= bookmark.movie.overview %></p>
-      <p class="card-text">Rating: <%= bookmark.movie.rating %></p>
-      <% if bookmark.comment.present? %>
-        <p class="card-text">My comment: <%= bookmark.comment %></p>
-      <% else %>
-        <p class="card-text">No comment available</p>
-      <% end %>
-    </div>
+        <h5 class="card-title"><%= bookmark.movie.title %></h5>
+        <p class="card-text">Overview: <%= bookmark.movie.overview %></p>
+        <p class="card-text">Rating: <%= bookmark.movie.rating %></p>
+         <% if bookmark.comment.present? %>
+          <p class="card-text">My comment: <%= bookmark.comment %></p>
+            <% else %>
+          <p class="card-text">No comment available</p>
+        <% end %>
+      </div>
         <!-- ici on va ajouter le lien du destroy sur notre bookmark qu'on parcours actuellement -->
         <%= link_to "Delete your comment", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-warning"%>
-  </div>
-<% end %>
-      </div>
     </div>
-    </div>
-    </div>
-  </div>
+  <% end %>
+</div>
+</div>
+</div>
+</div>
+</div>

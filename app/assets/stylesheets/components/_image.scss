@@ -3,11 +3,13 @@
   height: 350px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(38, 37, 37, 0.1);
+  margin-right: 20px;
 }
 .movie-title {
   font-size: 2.0em;
   font-weight: bold;
   color: hsl(359, 98%, 53%);
+  text-shadow: 10px 4px 8px rgba(0, 0, 0, 0.5);
 }
 .movie-content {
   font-size: 1.2em;

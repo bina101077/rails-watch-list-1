@@ -1,10 +1,10 @@
 
-<h2>Your watch lists are here!</h2>
+<h2>Your watch lists:</h2>
 
 
           <div class="card">
             <% @lists.each do |list| %>
 
-            <h2><%= link_to list.name, list_path(list) %></h2>
+            <h2 class="card-title"><%= link_to list.name, list_path(list) %></h2>
             <% end %>
               </div>

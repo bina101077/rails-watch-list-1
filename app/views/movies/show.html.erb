@@ -1,12 +1,11 @@
-
+<div class="container">
     <p class="movie-path"><%= link_to @movie.title, movies_path(@movie) %></p>
-    <div class="col-lg-6">
-    <img class="img-poster" src="<%= @movie.poster_url %>" >
+     <div class="col-lg-6">
+      <img class="img-poster" src="<%= @movie.poster_url %>" >
+     </div>
+     <h5 class="card-title"><%= @movie.title %></h5>
+    <div class="card-body">
+      <p class="card-text">Overview: <%= @movie.overview %></p>
+      <p class="card-text">Rating: <%= @movie.rating %></p>
     </div>
-        <p class="movie-title"><%= @movie.title %></p>
-        </div>
-        <div class="movie-content">
-          <p class="movie-content">Overview:<%= @movie.overview %></p>
-          <p class="movie-content">Rating:<%= @movie.rating %></p>
-        </div>
-        <%# <%= link_to 'Create bookmarks', bookmarks_path(@bookmark) %> %>
+</div>
