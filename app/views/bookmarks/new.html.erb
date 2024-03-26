@@ -1,2 +1,3 @@
 <h2> You can write your bookmark here:</h2>
-<%=link_to 'New bookmark', list_new_bookmark_path %>
+ <%= render 'form', bookmark:@bookmark %>
+<%# <%=link_to 'New bookmark', new_bookmarks_path %> %>
