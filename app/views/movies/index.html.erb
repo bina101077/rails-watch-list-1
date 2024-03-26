@@ -1,6 +1,8 @@
+<h2>Movies:</h2>
+<div class="card">
 
-<ul>
   <% @movies.each do |movie| %>
-    <li><%= link_to movie.title, movie_path(movie) %></li>
+    <h2 class="card-title"><%= link_to movie.title, movie_path(movie) %></h2>
   <% end %>
-</ul>
+
+</div>
