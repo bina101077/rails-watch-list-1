@@ -1,0 +1,7 @@
+
+<%# <h2><%= @list.bookmarks %></h2>
+        <div class="btn-style"> %
+          <p><%= link_to "Bookmark",  new_list_bookmark_path(@bookmark), class: 'btn-book' %></p>
+          <p><%= link_to "Edit", edit_list_bookmark_path(@bookmark), class: 'btn-edit' %></p>
+          <p><%= link_to "Delete", bookmark_path(@bookmark), class: 'btn-delete' %></p>
+        <%# </div> %>

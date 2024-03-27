@@ -1,0 +1,8 @@
+<h2>Movies:</h2>
+<div class="card">
+
+  <% @movies.each do |movie| %>
+    <h2 class="card-title"><%= link_to movie.title, movie_path(movie) %></h2>
+  <% end %>
+
+</div>

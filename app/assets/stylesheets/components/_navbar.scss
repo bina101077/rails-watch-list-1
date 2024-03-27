@@ -13,9 +13,14 @@
 }
 
 .nav-links {
+  display: flex;
   background-color: rgb(240, 214, 217);
-  // justify-content: space-between 10px;
-  flex-grow: 100;
+  justify-content: space-between 5px;
+}
+
+.nav-links li {
+  /* Add margin between items */
+  margin-right: 40px; /* Adjust the value as needed */
 }
 
 // .navbar .navbar-brand img {
