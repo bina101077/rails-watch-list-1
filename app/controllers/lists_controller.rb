@@ -16,13 +16,10 @@ class ListsController < ApplicationController
   end
 
   def create
-    @list = List.new
-    @list = List.create(list_params)
-    if @list.save
-      redirect_to new_list_path(@list), notice: 'List was successfully created.'
-      else
-        render :new
-    end
+    @list = List.new(list_params)
+    #@list = List.create(list_params)
+    @list.save
+      redirect_to list_path(@lists), notice: 'List was successfully created.'
   end
 
 
@@ -46,7 +43,7 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(params[:id], :name)
+    params.require(:list).permit(:name)
   end
 
   def find_list
